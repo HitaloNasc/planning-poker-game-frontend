@@ -1,0 +1,29 @@
+.playerArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #1e2938;
+  max-width: 50px;
+}
+
+.playerCard-noSelected {
+  background-color: #e8e9ea;
+  width: 40px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.playerCard-selected{
+    background-image: url('../../../assets/xadrez.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.playerName{
+    margin: 5px 0;
+}

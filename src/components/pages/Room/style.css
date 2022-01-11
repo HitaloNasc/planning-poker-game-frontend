@@ -1,0 +1,33 @@
+.head {
+  padding: 0;
+  margin: 15px 0 15px 0;
+  max-height: 10vh;
+  height: 100%;
+}
+
+.connecting {
+  margin: 20px 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tableArea {
+  width: 100%;
+  min-width: 400px;
+  display: flex;
+  min-height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardsArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

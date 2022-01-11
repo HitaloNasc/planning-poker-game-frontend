@@ -1,0 +1,13 @@
+.inviteNewPlayer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  font-weight: bold;
+}
+
+.inviteNewPlayer-content > span {
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}

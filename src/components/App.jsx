@@ -1,28 +1,24 @@
-import React, { useEffect, useState } from 'react'; //eslint-disable-line
-import socketClient from 'socket.io-client';
+// global
+import React, { memo } from 'react';
+// local fucntions
+// import { GameContext, sendMessage, createRoom } from '../contexts/GameContext';
+// local components
+// import PlayerList from './commons/PlayerList';
+// import Chat from './commons/Chat';
+// import { Box, Grid } from '@mui/material';
+// styles
 import './App.css';
+import '@fontsource/roboto/300.css';
+import Room from './pages/Room';
 
-function App() {
-  const [players, setPlayers] = useState({});
-
-  useEffect(() => {
-    const socket = socketClient('http://localhost:8000', { transports: ['websocket'] });
-    socket.on('connection', () => {
-      console.log('Conectado!');
-    });
-
-    socket.on('PlayersRefresh', players => {
-      setPlayers(players);
-    });
-  }, []);
+const App = () => {
+  // const { isConnected, players, messages } = useContext(GameContext);
 
   return (
-    <div>
-      {Object.keys(players).map(key => (
-        <div key={key}>{players[key].name}</div>
-      ))}
+    <div className='app'>
+      <Room />
     </div>
   );
-}
+};
 
-export default App;
+export default memo(App);
