@@ -1,0 +1,14 @@
+#messageArea {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  white-space: pre-wrap;
+}
+
+#inputArea {
+  /* position: fixed; */
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  
+}

@@ -1,5 +1,8 @@
 import React, { memo, useState } from 'react';
+import { Grid } from '@mui/material';
+import ChatInput from '../Inputs/ChatInput';
 import { PropTypes } from 'prop-types';
+import SendMessage from '../Buttons/SendMessage';
 
 const Chat = ({ sendMessage, messages }) => {
   const [messageToSend, setMessageToSend] = useState('');
@@ -11,24 +14,40 @@ const Chat = ({ sendMessage, messages }) => {
     }
   };
 
-  const handleOnChange = () => {
+  const handleDisplayChange = e => {
+    setMessageToSend(e.target.value);
+  };
+
+  const handleOnClick = () => {
     sendMessage(messageToSend);
     setMessageToSend('');
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
-      <div style={{ whiteSpace: 'pre-wrap' }}>{messages.join('\n\n')}</div>
-
-      <input
-        type='text'
-        value={messageToSend}
-        onChange={e => setMessageToSend(e.target.value)}
-        onKeyPress={handleKeyPress}
-      />
-
-      <button onClick={handleOnChange}>Enviar</button>
-    </div>
+    <Grid container spacing={0}>
+      <Grid item xs={12}>
+        <div
+          id='messageArea'
+          style={{
+            whiteSpace: 'pre-wrap',
+            marginTop: '3px',
+            position: 'fixed',
+            bottom: '35px',
+            maxHeight: '70vh'
+          }}
+        >
+          {messages.join('\n')}
+        </div>
+      </Grid>
+      <Grid item xs={12} id='inputArea'>
+        <ChatInput
+          value={messageToSend}
+          onChange={handleDisplayChange}
+          onKeyPress={handleKeyPress}
+        />
+        <SendMessage onClick={handleOnClick} />
+      </Grid>
+    </Grid>
   );
 };
 

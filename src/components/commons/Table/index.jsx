@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import './style.css';
 
 function Table({ children }) {
-  return <div className='table'>{children ? children : 'Escolham suas cartas!'}</div>;
+  return <div className='table'>{children ? children : 'Escolha uma carta!'}</div>;
 }
 
 Table.propTypes = {
