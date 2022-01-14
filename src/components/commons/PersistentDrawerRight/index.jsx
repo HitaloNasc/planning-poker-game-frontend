@@ -99,8 +99,7 @@ function PersistentDrawerRight({ children, sendMessage, messages }) {
                 edge='end'
                 onClick={handleDrawerOpen}
                 sx={{ ...(open && { display: 'none' }) }}
-              >
-              </ChatOutlinedIcon>
+              ></ChatOutlinedIcon>
             </Box>
           </div>
         </Toolbar>
